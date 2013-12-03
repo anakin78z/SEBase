@@ -11,6 +11,12 @@ import com.sedigital.sebase.tasks.SETaskManager;
  */
 public class SEFragment extends Fragment{
 
+    @Override
+    public void onDestroy() {
+        cancelTasks();
+        super.onDestroy();
+    }
+
     public void setProgressBarIndeterminateVisibility(boolean visible){
         try{
             getActivity().setProgressBarIndeterminateVisibility(visible);

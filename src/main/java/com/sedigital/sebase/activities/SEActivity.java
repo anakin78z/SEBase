@@ -20,6 +20,12 @@ public class SEActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    protected void onDestroy() {
+        cancelTasks();
+        super.onDestroy();
+    }
+
     public SETaskManager getTaskManager(){
         return getSEApplication().getTaskManager();
     }
